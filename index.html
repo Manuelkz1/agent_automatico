@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Sala de Colaboración de IAs</title>
+<style>
+    body { font-family: Arial, sans-serif; margin: 2em; line-height: 1.6; }
+    h1, h2, h3 { color: #333; }
+    section { margin-bottom: 1.5em; }
+    ul { margin-left: 1.2em; }
+</style>
+</head>
+<body>
+<h1>Guía Completa para Crear la Aplicación “Sala de Colaboración de IAs”</h1>
+
+<section>
+<h2>🎯 Objetivo de la Aplicación</h2>
+<p>Permitir que un usuario defina un objetivo (por ejemplo: “Crear un sitio web de portafolio”). El equipo de IAs (ChatGPT, Claude, Gemini, etc.) analiza el objetivo, lo divide en pasos lógicos y resuelve cada paso por turnos. Cada IA revisa y corrige el trabajo anterior antes de avanzar, y solo continúa cuando todas han validado el paso. El proceso finaliza cuando el proyecto está 100% completado y validado.</p>
+</section>
+
+<section>
+<h2>Prompt Maestro</h2>
+<p>La instrucción principal para las IAs indica que:</p>
+<ul>
+<li>Simulan un equipo colaborativo que recibe un objetivo del usuario.</li>
+<li>Analizan ese objetivo y lo dividen en pasos claros.</li>
+<li>Ejecutan cada paso por turnos y se corrigen mutuamente.</li>
+<li>Aprueban colectivamente cada paso antes de avanzar.</li>
+<li>Terminan con un informe detallado del proceso y el resultado final.</li>
+</ul>
+</section>
+
+<section>
+<h2>Arquitectura Técnica</h2>
+<h3>Componentes Principales</h3>
+<ul>
+<li><strong>Frontend:</strong> interfaz para que el usuario escriba el objetivo, vea el progreso y cargue sus claves API.</li>
+<li><strong>Backend:</strong> servidor que coordina los turnos de las IAs, mantiene el estado del proyecto y valida etapas.</li>
+<li><strong>Base de datos (opcional):</strong> almacena sesiones, etapas y estados de avance.</li>
+<li><strong>APIs IA:</strong> conexiones a las plataformas de IA de OpenAI (ChatGPT), Google (Gemini), Anthropic (Claude), entre otras.</li>
+</ul>
+
+<h3>Flujo General</h3>
+<ol>
+<li>El usuario inicia una sesión, proporciona su objetivo y las claves de API necesarias.</li>
+<li>El sistema lanza la conversación entre IAs, comenzando con el análisis del objetivo.</li>
+<li>Cada IA actúa en su turno, contribuye al paso actual y revisa el trabajo anterior.</li>
+<li>Una vez todas aprueban el paso, se avanza al siguiente.</li>
+<li>El proceso continúa hasta que se complete el objetivo.</li>
+</ol>
+</section>
+
+<section>
+<h2>Diseño de la Interfaz</h2>
+<ul>
+<li><strong>Inicio de Sesión:</strong> ingreso de claves API por IA y botón de iniciar sesión.</li>
+<li><strong>Pantalla de Objetivo:</strong> formulario donde el usuario redacta su meta.</li>
+<li><strong>Panel de Etapas:</strong> secciones donde se muestran las etapas identificadas por las IAs y su estado (pendiente, en curso, aprobado).</li>
+<li><strong>Área de Conversación:</strong> chat donde se ve cómo las IAs interactúan, debaten y corrigen el trabajo entre ellas.</li>
+<li><strong>Informe Final:</strong> resumen del resultado del trabajo colaborativo y opción para descargar.</li>
+</ul>
+</section>
+
+<section>
+<h2>Recomendaciones para la Implementación</h2>
+<ul>
+<li>Las claves API deben ser proporcionadas por el usuario final y nunca incluirse preinstaladas.</li>
+<li>Deben cifrarse y almacenarse temporalmente solo durante la sesión activa.</li>
+<li>El sistema debe respetar los límites de uso de cada proveedor de IA.</li>
+<li>Idealmente se ofrece al usuario control para pausar, reiniciar o revisar el progreso en cualquier momento.</li>
+</ul>
+</section>
+
+<section>
+<h2>Seguridad y Costos</h2>
+<ul>
+<li>La aplicación debe usar HTTPS para asegurar la comunicación.</li>
+<li>La autenticación puede ser simple por sesión o más robusta para mantener historial.</li>
+<li>El costo del uso de las IAs será asumido por el usuario mediante sus propias claves.</li>
+</ul>
+</section>
+
+<section>
+<h2>Resumen y Próximos Pasos</h2>
+<ol>
+<li>Diseñar la interfaz inicial para carga de claves y objetivo.</li>
+<li>Construir el backend que coordina los turnos entre las IAs.</li>
+<li>Implementar el sistema de etapas: creación, validación y avance.</li>
+<li>Configurar las integraciones con APIs de ChatGPT, Gemini y Claude.</li>
+<li>Realizar pruebas con tareas reales y ajustar según feedback.</li>
+<li>Lanzar la aplicación con funciones básicas y escalar gradualmente.</li>
+</ol>
+</section>
+</body>
+</html>
